@@ -1,10 +1,10 @@
-import { Cart } from "@/app/assets/icons";
 import Image from "next/image";
 import Link from "next/link";
+import CartDrawer from "../Cart";
 
 const Navbar = () => {
     return (
-        <nav className="flex items-center justify-between px-16 py-4 w-full">
+        <nav className="fixed bg-white flex items-center justify-between px-16 py-4 w-full">
             <div className="flex items-center">
                 <Link href="#" className="mr-8">
                     <Image src="/logo.svg" width={70} height={36} alt="Logo da loja" />
@@ -23,9 +23,7 @@ const Navbar = () => {
                 </ul>
             </div>
 
-            <button>
-                <Cart />
-            </button>
+            <CartDrawer />
         </nav>
     )
 }
