@@ -1,14 +1,20 @@
 import { Cart } from "@/app/assets/icons";
+import { useState } from "react";
 
 const CartDrawer = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <div>
-            <button className="cursor-pointer">
+            <button className="cursor-pointer" onClick={() => setIsOpen(true)}>
                 <Cart />
             </button>
 
-            <div className="bg-white border border-neutral-500/20 fixed right-1 z-9999 w-100 shadow-2xl p-4">
-                <span className="text-sm text-neutral-500">Seu carrinho</span>
+            <div className={`${isOpen ? "block" : "hidden"} bg-white border border-neutral-500/20 fixed right-1 z-9999 w-100 shadow-2xl p-4`}>
+                <div>
+                    <button onClick={() => setIsOpen(false)} className="p-1 mr-2 cursor-pointer">&times;</button>
+                    <span className="text-sm text-neutral-500">Seu carrinho</span>
+                </div>
 
                 <div>
                     <div className="mt-4">
